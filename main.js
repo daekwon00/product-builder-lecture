@@ -1,5 +1,7 @@
 const lottoNumbersContainer = document.querySelector('.lotto-numbers');
 const generateBtn = document.querySelector('#generate-btn');
+const themeToggleBtn = document.querySelector('#theme-toggle-btn');
+const body = document.body;
 
 function generateLottoNumbers() {
   lottoNumbersContainer.innerHTML = '';
@@ -33,7 +35,23 @@ function generateLottoNumbers() {
   });
 }
 
+function toggleTheme() {
+  body.classList.toggle('dark-mode');
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark-mode');
+  } else {
+    localStorage.removeItem('theme');
+  }
+}
+
+// Check for saved theme preference
+if (localStorage.getItem('theme') === 'dark-mode') {
+  body.classList.add('dark-mode');
+}
+
 generateBtn.addEventListener('click', generateLottoNumbers);
+themeToggleBtn.addEventListener('click', toggleTheme);
+
 
 // Initial generation
 generateLottoNumbers();
