@@ -69,6 +69,27 @@ h1 {
   color: var(--container-color);
 }
 
+#language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 150px; /* Adjust as needed */
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+#language-switcher:hover {
+  background-color: var(--accent-color);
+  color: var(--container-color);
+}
+
+
 .menu-display {
   display: flex;
   justify-content: center;
