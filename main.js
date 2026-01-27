@@ -38,7 +38,8 @@ function recommendMenu() {
   menuDisplayContainer.appendChild(menuItemDiv);
 
   const menuImage = document.createElement('img');
-  menuImage.src = `https://source.unsplash.com/400x300/?${selectedMenu.searchTerm}`;
+  const encodedSearchTerm = selectedMenu.searchTerm.replace(/ /g, "+");
+  menuImage.src = `https://source.unsplash.com/400x300/?${encodedSearchTerm}`;
   menuImage.classList.add('menu-image');
   menuDisplayContainer.appendChild(menuImage);
 }
