@@ -1,38 +1,25 @@
-const lottoNumbersContainer = document.querySelector('.lotto-numbers');
-const generateBtn = document.querySelector('#generate-btn');
+const menuDisplayContainer = document.querySelector('.menu-display');
+const recommendBtn = document.querySelector('#recommend-btn');
 const themeToggleBtn = document.querySelector('#theme-toggle-btn');
 const body = document.body;
 
-function generateLottoNumbers() {
-  lottoNumbersContainer.innerHTML = '';
-  const numbers = new Set();
-  while (numbers.size < 6) {
-    numbers.add(Math.floor(Math.random() * 45) + 1);
-  }
-  
-  const sortedNumbers = Array.from(numbers).sort((a, b) => a - b);
-  
-  sortedNumbers.forEach((number, index) => {
-    const numberDiv = document.createElement('div');
-    numberDiv.classList.add('number');
-    numberDiv.textContent = number;
-    
-    // Assign color based on number range
-    if (number <= 10) {
-        numberDiv.style.backgroundColor = '#fbc400';
-    } else if (number <= 20) {
-        numberDiv.style.backgroundColor = '#69c8f2';
-    } else if (number <= 30) {
-        numberDiv.style.backgroundColor = '#ff7272';
-    } else if (number <= 40) {
-        numberDiv.style.backgroundColor = '#aaa';
-    } else {
-        numberDiv.style.backgroundColor = '#b0d840';
-    }
+const dinnerMenus = [
+  "치킨", "피자", "삼겹살", "족발", "보쌈",
+  "짜장면", "짬뽕", "탕수육", "초밥", "회",
+  "떡볶이", "순대", "튀김", "김치찌개", "된장찌개",
+  "부대찌개", "파스타", "스테이크", "햄버거", "샌드위치"
+];
 
-    numberDiv.style.animationDelay = `${index * 0.1}s`;
-    lottoNumbersContainer.appendChild(numberDiv);
-  });
+function recommendMenu() {
+  menuDisplayContainer.innerHTML = '';
+  const randomIndex = Math.floor(Math.random() * dinnerMenus.length);
+  const selectedMenu = dinnerMenus[randomIndex];
+  
+  const menuItemDiv = document.createElement('div');
+  menuItemDiv.classList.add('menu-item');
+  menuItemDiv.textContent = selectedMenu;
+  
+  menuDisplayContainer.appendChild(menuItemDiv);
 }
 
 function toggleTheme() {
@@ -49,9 +36,8 @@ if (localStorage.getItem('theme') === 'dark-mode') {
   body.classList.add('dark-mode');
 }
 
-generateBtn.addEventListener('click', generateLottoNumbers);
+recommendBtn.addEventListener('click', recommendMenu);
 themeToggleBtn.addEventListener('click', toggleTheme);
 
-
-// Initial generation
-generateLottoNumbers();
+// Initial recommendation
+recommendMenu();
