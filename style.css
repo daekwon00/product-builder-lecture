@@ -53,7 +53,7 @@ h1 {
 #theme-toggle-btn {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 180px;
   background-color: transparent;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
@@ -62,6 +62,7 @@ h1 {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10;
 }
 
 #theme-toggle-btn:hover {
@@ -72,7 +73,7 @@ h1 {
 #language-switcher {
   position: absolute;
   top: 20px;
-  right: 150px; /* Adjust as needed */
+  right: 340px; /* Adjusted to make space for contact link */
   background-color: transparent;
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
@@ -82,9 +83,31 @@ h1 {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  z-index: 10; /* Ensure it's above other elements if necessary */
 }
 
 #language-switcher:hover {
+  background-color: var(--accent-color);
+  color: var(--container-color);
+}
+
+#contact-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 10; /* Ensure it's above other elements if necessary */
+}
+
+#contact-link:hover {
   background-color: var(--accent-color);
   color: var(--container-color);
 }
@@ -155,6 +178,79 @@ h1 {
   }
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background-color: #e67e3a;
+  transform: translateY(-2px);
+}
+
+.back-link {
+  margin-top: 30px;
+}
+
+.back-link a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-link a:hover {
+  color: #e67e3a;
+  text-decoration: underline;
+}
 @media (max-width: 600px) {
   .container {
     padding: 30px;
@@ -170,6 +266,36 @@ h1 {
   }
 
   #recommend-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  #theme-toggle-btn,
+  #language-switcher,
+  #contact-link {
+    position: static; /* Remove absolute positioning on small screens */
+    margin: 0 auto 10px auto; /* Center and add spacing below */
+    display: block; /* Make them block-level to stack */
+    width: fit-content;
+    text-align: center;
+  }
+  
+  #contact-link {
+    margin-bottom: 20px; /* More space for the last button before content */
+  }
+
+  .contact-form label {
+    font-size: 1rem;
+  }
+
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
     padding: 12px 30px;
     font-size: 1rem;
   }
