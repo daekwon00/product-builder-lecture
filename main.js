@@ -20,6 +20,13 @@ function recommendMenu() {
   menuItemDiv.textContent = selectedMenu;
   
   menuDisplayContainer.appendChild(menuItemDiv);
+
+  if (selectedMenu === "피자") {
+    const pizzaImage = document.createElement('img');
+    pizzaImage.src = 'pizza-5275191_1920.jpg';
+    pizzaImage.classList.add('menu-image');
+    menuDisplayContainer.appendChild(pizzaImage);
+  }
 }
 
 function toggleTheme() {

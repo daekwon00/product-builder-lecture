@@ -96,6 +96,7 @@ h1 {
   align-items: center;
   margin-bottom: 30px;
   min-height: 80px;
+  flex-direction: column;
 }
 
 .menu-item {
@@ -109,6 +110,12 @@ h1 {
   transform: scale(0);
   animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
 }
+
+.menu-image {
+  width: 100px;
+  margin-top: 20px;
+}
+
 
 #recommend-btn {
   background-color: var(--accent-color);
