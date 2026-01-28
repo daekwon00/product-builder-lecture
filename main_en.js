@@ -9,7 +9,7 @@ const dinnerMenus = [
   { name: "Fried Chicken", category: "korean", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=400&h=300&fit=crop" },
   { name: "Pizza", category: "western", image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" },
   { name: "Pork Belly", category: "korean", image: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?w=400&h=300&fit=crop" },
-  { name: "Jokbal", category: "korean", image: "https://images.unsplash.com/photo-1632558610168-b6f58fb021e8?w=400&h=300&fit=crop" },
+  { name: "Jokbal", category: "korean", image: "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=400&h=300&fit=crop" },
   { name: "Bossam", category: "korean", image: "https://images.unsplash.com/photo-1623341214825-9f4f963727da?w=400&h=300&fit=crop" },
   { name: "Jajangmyeon", category: "chinese", image: "https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=400&h=300&fit=crop" },
   { name: "Jjamppong", category: "chinese", image: "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=400&h=300&fit=crop" },
