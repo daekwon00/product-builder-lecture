@@ -50,27 +50,21 @@
   <section class="comments-section">
     <h2 class="comments-title">Comments</h2>
     <div id="disqus_thread"></div>
-    <div id="disqus_error" style="display:none; text-align:center; padding:20px; color:#666;">
-      Unable to load comments. Please disable ad blocker or refresh the page.
-    </div>
   </section>
   <script>
-    var disqus_shortname = 'product-builder-lecture-8m4-pages-dev';
     var disqus_config = function () {
       this.page.url = 'https://product-builder-lecture-8m4.pages.dev/index_en.html';
       this.page.identifier = 'menu-recommendation-en';
     };
     (function() {
       var d = document, s = d.createElement('script');
-      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.src = 'https://productlecture.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
-      s.onerror = function() {
-        document.getElementById('disqus_error').style.display = 'block';
-      };
       (d.head || d.body).appendChild(s);
     })();
   </script>
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <script id="dsq-count-scr" src="//productlecture.disqus.com/count.js" async></script>
   <script src="main_en.js"></script>
 </body>
 </html>
