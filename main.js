@@ -16,7 +16,7 @@ const dinnerMenus = [
   { name: "탕수육", category: "chinese", image: "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=400&h=300&fit=crop" },
   { name: "초밥", category: "japanese", image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop" },
   { name: "회", category: "japanese", image: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=400&h=300&fit=crop" },
-  { name: "떡볶이", category: "snack", image: "https://images.unsplash.com/photo-1541456286246-201062c00ada?w=400&h=300&fit=crop" },
+  { name: "떡볶이", category: "snack", image: "https://images.unsplash.com/photo-1618449840665-9ed506d73a34?w=400&h=300&fit=crop" },
   { name: "순대", category: "snack", image: "https://images.unsplash.com/photo-1583032015879-e5022cb87c3b?w=400&h=300&fit=crop" },
   { name: "튀김", category: "snack", image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&h=300&fit=crop" },
   { name: "김치찌개", category: "korean", image: "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=400&h=300&fit=crop" },
