@@ -47,7 +47,10 @@
     <p class="footer-text">맛있는 저녁 되세요! 🍴</p>
   </footer>
 
-  <div id="disqus_thread"></div>
+  <section class="comments-section">
+    <h2 class="comments-title">댓글</h2>
+    <div id="disqus_thread"></div>
+  </section>
   <script>
     var disqus_config = function () {
       this.page.url = 'https://product-builder-lecture-8m4.pages.dev/index.html';
@@ -55,7 +58,7 @@
     };
     (function() {
       var d = document, s = d.createElement('script');
-      s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
+      s.src = 'https://product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
       s.setAttribute('data-timestamp', +new Date());
       (d.head || d.body).appendChild(s);
     })();

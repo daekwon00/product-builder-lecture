@@ -327,11 +327,28 @@ body {
   font-weight: 700;
 }
 
-/* Disqus */
-#disqus_thread {
+/* Comments Section */
+.comments-section {
   max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  margin-bottom: 40px;
+}
+
+.comments-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-color);
+}
+
+#disqus_thread {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 /* Responsive */
