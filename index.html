@@ -7,29 +7,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>오늘 뭐 먹지?</h1>
-    <button id="theme-toggle-btn">테마 변경</button>
-    <a href="index_en.html" id="language-switcher">English</a>
-    <a href="contact.html" id="contact-link">제휴 문의</a>
-    <div class="menu-display">
+  <header class="header">
+    <h1 class="logo">오늘 저녁 뭐 먹지?</h1>
+    <div class="header-buttons">
+      <a href="index_en.html" class="header-btn">EN</a>
+      <button id="theme-toggle-btn" class="header-btn">🌙</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="card">
+      <div class="card-icon">
+        <span class="icon-fork">🍴</span>
+        <span class="icon-plate">🍽️</span>
       </div>
-    <button id="recommend-btn">메뉴 추천</button>
-  </div>
+      <div class="menu-display">
+        <h2 class="prompt-text">버튼을 눌러주세요</h2>
+        <p class="prompt-subtext">오늘의 저녁 메뉴를 추천해 드립니다</p>
+      </div>
+    </div>
+
+    <button id="recommend-btn">메뉴 추천받기</button>
+
+    <div class="category-selector">
+      <label for="category">카테고리:</label>
+      <select id="category">
+        <option value="all">전체</option>
+        <option value="korean">한식</option>
+        <option value="chinese">중식</option>
+        <option value="japanese">일식</option>
+        <option value="western">양식</option>
+        <option value="snack">분식</option>
+      </select>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="contact.html" class="contact-btn">제휴문의</a>
+    <p class="footer-text">맛있는 저녁 되세요! 🍴</p>
+  </footer>
+
   <div id="disqus_thread"></div>
-<script>
+  <script>
     var disqus_config = function () {
-    this.page.url = 'https://daekwon00.github.io/product-builder-lecture/index.html';
-    this.page.identifier = 'menu-recommendation-ko';
+      this.page.url = 'https://daekwon00.github.io/product-builder-lecture/index.html';
+      this.page.identifier = 'menu-recommendation-ko';
     };
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
     })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script src="main.js"></script>
 </body>
 </html>

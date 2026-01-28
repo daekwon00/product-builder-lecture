@@ -7,29 +7,60 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>What should I eat for dinner?</h1>
-    <button id="theme-toggle-btn">Toggle Theme</button>
-    <a href="index.html" id="language-switcher">한국어</a>
-    <a href="contact_en.html" id="contact-link">Partnership Inquiry</a>
-    <div class="menu-display">
+  <header class="header">
+    <h1 class="logo">What's for Dinner?</h1>
+    <div class="header-buttons">
+      <a href="index.html" class="header-btn">KR</a>
+      <button id="theme-toggle-btn" class="header-btn">🌙</button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <div class="card">
+      <div class="card-icon">
+        <span class="icon-fork">🍴</span>
+        <span class="icon-plate">🍽️</span>
       </div>
-    <button id="recommend-btn">Recommend Menu</button>
-  </div>
+      <div class="menu-display">
+        <h2 class="prompt-text">Press the button</h2>
+        <p class="prompt-subtext">We'll recommend tonight's dinner menu</p>
+      </div>
+    </div>
+
+    <button id="recommend-btn">Get Recommendation</button>
+
+    <div class="category-selector">
+      <label for="category">Category:</label>
+      <select id="category">
+        <option value="all">All</option>
+        <option value="korean">Korean</option>
+        <option value="chinese">Chinese</option>
+        <option value="japanese">Japanese</option>
+        <option value="western">Western</option>
+        <option value="snack">Snacks</option>
+      </select>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <a href="contact_en.html" class="contact-btn">Contact Us</a>
+    <p class="footer-text">Enjoy your dinner! 🍴</p>
+  </footer>
+
   <div id="disqus_thread"></div>
-<script>
+  <script>
     var disqus_config = function () {
-    this.page.url = 'https://daekwon00.github.io/product-builder-lecture/index_en.html';
-    this.page.identifier = 'menu-recommendation-en';
+      this.page.url = 'https://daekwon00.github.io/product-builder-lecture/index_en.html';
+      this.page.identifier = 'menu-recommendation-en';
     };
-    (function() { // DON'T EDIT BELOW THIS LINE
-    var d = document, s = d.createElement('script');
-    s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
     })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script src="main_en.js"></script>
 </body>
 </html>

@@ -7,64 +7,64 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>제휴 문의</h1>
-    <button id="theme-toggle-btn">테마 변경</button>
-    <a href="contact_en.html" id="language-switcher">English</a>
-    
-    <form action="https://formspree.io/f/mojdrwry" method="POST" class="contact-form">
-      <label for="name">이름:</label>
-      <input type="text" id="name" name="name" required>
-      
-      <label for="email">이메일:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="message">메시지:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-      
-      <button type="submit" class="submit-btn">보내기</button>
-    </form>
+  <header class="header">
+    <h1 class="logo">제휴 문의</h1>
+    <div class="header-buttons">
+      <a href="contact_en.html" class="header-btn">EN</a>
+      <button id="theme-toggle-btn" class="header-btn">🌙</button>
+    </div>
+  </header>
 
-        <div class="back-link">
+  <main class="main-content">
+    <div class="container">
+      <h1>문의하기</h1>
 
-          <a href="index.html">메뉴 추천으로 돌아가기</a>
+      <form action="https://formspree.io/f/mojdrwry" method="POST" class="contact-form">
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required>
 
-        </div>
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required>
 
+        <label for="message">메시지:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="submit-btn">보내기</button>
+      </form>
+
+      <div class="back-link">
+        <a href="index.html">메뉴 추천으로 돌아가기</a>
       </div>
+    </div>
+  </main>
 
-      <div id="disqus_thread"></div>
+  <footer class="footer">
+    <p class="footer-text">맛있는 저녁 되세요! 🍴</p>
+  </footer>
 
-    <script>
+  <script>
+    const themeToggleBtn = document.querySelector('#theme-toggle-btn');
+    const body = document.body;
 
-        var disqus_config = function () {
+    function toggleTheme() {
+      body.classList.toggle('light-mode');
+      if (body.classList.contains('light-mode')) {
+        localStorage.setItem('theme', 'light-mode');
+        themeToggleBtn.textContent = '🌙';
+      } else {
+        localStorage.removeItem('theme');
+        themeToggleBtn.textContent = '☀️';
+      }
+    }
 
-        this.page.url = 'https://daekwon00.github.io/product-builder-lecture/contact.html';
+    if (localStorage.getItem('theme') === 'light-mode') {
+      body.classList.add('light-mode');
+      themeToggleBtn.textContent = '🌙';
+    } else {
+      themeToggleBtn.textContent = '☀️';
+    }
 
-        this.page.identifier = 'contact-form-ko';
-
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-
-        var d = document, s = d.createElement('script');
-
-        s.src = '//product-builder-lecture-8m4-pages-dev.disqus.com/embed.js';
-
-        s.setAttribute('data-timestamp', +new Date());
-
-        (d.head || d.body).appendChild(s);
-
-        })();
-
-    </script>
-
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-      <script src="main.js"></script>
-
-    </body>
-
-    </html>
-
-    
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  </script>
+</body>
+</html>

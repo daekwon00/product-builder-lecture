@@ -1,17 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
 :root {
-  --background-color: #fdfaf6;
-  --text-color: #3a3a3a;
-  --accent-color: #ff8c42;
-  --container-color: #ffffff;
+  --bg-color: #1a1a2e;
+  --card-bg: #16213e;
+  --text-color: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-color: #e94560;
+  --accent-hover: #ff6b6b;
+  --btn-text: #ffffff;
+  --select-bg: #16213e;
+  --header-btn-bg: #16213e;
 }
 
-body.dark-mode {
-  --background-color: #2c2c2c;
-  --text-color: #fdfaf6;
-  --accent-color: #ffac70;
-  --container-color: #3a3a3a;
+body.light-mode {
+  --bg-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --text-color: #1a1a2e;
+  --text-secondary: #666666;
+  --accent-color: #e94560;
+  --accent-hover: #ff6b6b;
+  --btn-text: #ffffff;
+  --select-bg: #ffffff;
+  --header-btn-bg: #e8e8e8;
 }
 
 * {
@@ -21,125 +31,114 @@ body.dark-mode {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--background-color);
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: var(--bg-color);
   color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
-  background-size: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.container {
-  background-color: var(--container-color);
-  padding: 40px;
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.header-btn {
+  background-color: var(--header-btn-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+  opacity: 0.8;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background-color: var(--card-bg);
   border-radius: 20px;
+  padding: 50px 80px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
   max-width: 500px;
 }
 
-h1 {
+.card-icon {
+  font-size: 4rem;
   margin-bottom: 30px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  letter-spacing: 1px;
 }
 
-#theme-toggle-btn {
-  position: absolute;
-  top: 20px;
-  right: 180px;
-  background-color: transparent;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10;
+.card-icon .icon-plate {
+  margin-left: -20px;
 }
 
-#theme-toggle-btn:hover {
-  background-color: var(--accent-color);
-  color: var(--container-color);
+.prompt-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-#language-switcher {
-  position: absolute;
-  top: 20px;
-  right: 340px; /* Adjusted to make space for contact link */
-  background-color: transparent;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  z-index: 10; /* Ensure it's above other elements if necessary */
+.prompt-subtext {
+  color: var(--text-secondary);
+  font-size: 1rem;
 }
 
-#language-switcher:hover {
-  background-color: var(--accent-color);
-  color: var(--container-color);
-}
-
-#contact-link {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: transparent;
-  color: var(--accent-color);
-  border: 2px solid var(--accent-color);
-  padding: 8px 12px;
-  font-size: 0.9rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  z-index: 10; /* Ensure it's above other elements if necessary */
-}
-
-#contact-link:hover {
-  background-color: var(--accent-color);
-  color: var(--container-color);
-}
-
-
+/* Menu Display */
 .menu-display {
+  min-height: 100px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 30px;
-  min-height: 80px;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-item {
-  background-color: var(--accent-color);
-  color: var(--container-color);
-  padding: 20px 40px;
-  border-radius: 15px;
-  font-size: 2rem;
-  font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transform: scale(0);
-  animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) forwards;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 10px;
+  animation: fadeIn 0.5s ease;
 }
 
 .menu-image {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   margin-top: 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -148,42 +147,97 @@ h1 {
   opacity: 1;
 }
 
-
+/* Recommend Button */
 #recommend-btn {
-  background-color: var(--accent-color);
-  color: var(--background-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: var(--btn-text);
   border: none;
-  padding: 15px 40px;
-  font-size: 1.2rem;
+  padding: 18px 60px;
+  font-size: 1.3rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
 }
 
 #recommend-btn:hover {
-  background-color: #e67e3a;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(233, 69, 96, 0.5);
 }
 
 #recommend-btn:active {
   transform: translateY(0);
 }
 
-@keyframes popIn {
+/* Category Selector */
+.category-selector {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--text-secondary);
+}
+
+.category-selector label {
+  font-size: 1rem;
+}
+
+.category-selector select {
+  background-color: var(--select-bg);
+  color: var(--text-color);
+  border: 1px solid var(--text-secondary);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-selector select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 30px;
+}
+
+.contact-btn {
+  background-color: var(--header-btn-bg);
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.contact-btn:hover {
+  opacity: 0.8;
+}
+
+.footer-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: scale(0);
     opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
+/* Contact Form Styles */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -194,7 +248,7 @@ h1 {
 
 .contact-form label {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-color);
 }
 
@@ -202,10 +256,10 @@ h1 {
 .contact-form input[type="email"],
 .contact-form textarea {
   padding: 12px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--text-secondary);
   border-radius: 8px;
   font-size: 1rem;
-  background-color: var(--background-color);
+  background-color: var(--card-bg);
   color: var(--text-color);
   transition: border-color 0.3s ease;
 }
@@ -219,26 +273,24 @@ h1 {
 
 .contact-form textarea {
   resize: vertical;
+  min-height: 120px;
 }
 
 .submit-btn {
-  background-color: var(--accent-color);
-  color: var(--background-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+  color: var(--btn-text);
   border: none;
   padding: 15px 40px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 25px rgba(233, 69, 96, 0.4);
+  margin-top: 10px;
 }
 
 .submit-btn:hover {
-  background-color: #e67e3a;
   transform: translateY(-2px);
 }
 
@@ -249,60 +301,80 @@ h1 {
 .back-link a {
   color: var(--accent-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .back-link a:hover {
-  color: #e67e3a;
   text-decoration: underline;
 }
+
+/* Container for contact page */
+.container {
+  background-color: var(--card-bg);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Disqus */
+#disqus_thread {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Responsive */
 @media (max-width: 600px) {
-  .container {
-    padding: 30px;
+  .header {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 15px;
   }
 
-  h1 {
-    font-size: 2rem;
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .card {
+    min-width: auto;
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  .card-icon {
+    font-size: 3rem;
+  }
+
+  .prompt-text {
+    font-size: 1.4rem;
   }
 
   .menu-item {
-    font-size: 1.5rem;
-    padding: 15px 30px;
+    font-size: 2rem;
   }
 
   #recommend-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
+    padding: 15px 40px;
+    font-size: 1.1rem;
   }
 
-  #theme-toggle-btn,
-  #language-switcher,
-  #contact-link {
-    position: static; /* Remove absolute positioning on small screens */
-    margin: 0 auto 10px auto; /* Center and add spacing below */
-    display: block; /* Make them block-level to stack */
-    width: fit-content;
-    text-align: center;
-  }
-  
-  #contact-link {
-    margin-bottom: 20px; /* More space for the last button before content */
+  .category-selector {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .contact-form label {
-    font-size: 1rem;
-  }
-
-  .contact-form input[type="text"],
-  .contact-form input[type="email"],
-  .contact-form textarea {
-    padding: 10px;
-    font-size: 0.9rem;
-  }
-
-  .submit-btn {
-    padding: 12px 30px;
-    font-size: 1rem;
+  .container {
+    padding: 30px 20px;
   }
 }
